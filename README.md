@@ -93,7 +93,7 @@ This overlays rectangles for the XP ane HP bars ingame defined in **config.yaml*
 Use this to fine-tune your specific coordinates for each under the ***roi:*** section if you need to.
 
 ## Environment and Training
-### Gyn-style environment
+### Gym-style environment
 The main environment class is defined in **vs_env_fixed.py**:
 - Observations: stacked grayscale frames (shapes based on *obs_width*, *obs_height*, and *frame_stack* in **config_fixed.yaml**).
 - Actions: movement directions via *KeyController* in **controls.py**.
@@ -109,4 +109,15 @@ The script:
 - Wraps it in Stable-Baselines3 utilities (*DummyVecEnv*, *VecTransposeImage*).
 - Trains a PPO agent while allowing basic hotkeys in the console (pause/quit via *ConsoleHotkeyCallback*).
 
-Trained models and logs are written to local directories (e.g. *models/*,*tb/*) which are **intentionally not committed** to this repository. (sorry... you gotta work for your personal Vampire Survivors auto-player)
+Trained models and logs are written to local directories (e.g. *models/*,*tb/*) which are **intentionally not committed** to this repository. 
+> (sorry... you gotta work for your personal Vampire Survivors auto-player)
+
+## Future Improvements
+As implied before (as well with the sorry state this repository was in before) this was cobbled together for a graduate level class, so there are future ideas I may improve in the future (or some ideas for you if you're feeling *crazy enough*), since I see you silly gooses already cloning this class project :)
+
+- Refactor the environment into a reusable Python package/module.
+- Add richer logging and metrics dashboards.
+- Allow movement option of *click* for the agent
+- Integrate automatic menu traversal (to save the amount of times, I've had to navigate the menu for the next run)
+- Add configuration presets for different resolutions.
+- Integrate a clean training/evaluation CLI.
