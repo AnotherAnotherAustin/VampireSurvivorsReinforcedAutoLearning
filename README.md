@@ -69,3 +69,44 @@ source .venv/bin/activate
 ```
 pip install -r requirements.txt
 ```
+
+## Testing Screen Capture and ROIs
+But before we do anything fancy here, it would be good to verify that the capture and ROIs are set correctly.
+1. Ingame settings:
+
+***Resolution:*** 1920x1080
+
+***Window Mode:*** Fullscreen Window
+> These are the only required ingame settings for the code to function correctly, you can have the rest of the settings be whatever you want.
+
+2. Test full-monitor capture *(optional)*
+  ```
+  python test_capture.py
+  ```
+This should save **test_capture.png** in the currently directory. Open it and check that it properly took an image of your ingame screen.
+
+3. Debug XP/HP bar ROIs *(optional)*
+```
+python debug_roi.py
+```
+This overlays rectangles for the XP ane HP bars ingame defined in **config.yaml**.
+Use this to fine-tune your specific coordinates for each under the ***roi:*** section if you need to.
+
+## Environment and Training
+### Gyn-style environment
+The main environment class is defined in **vs_env_fixed.py**:
+- Observations: stacked grayscale frames (shapes based on *obs_width*, *obs_height*, and *frame_stack* in **config_fixed.yaml**).
+- Actions: movement directions via *KeyController* in **controls.py**.
+- Reward: combines time alive, HP changes, and enemy density around the player (see **reward.py** and the *reward:*/*enemy_penalty:* sections in the config).
+
+### Running it (what you've been waiting for)
+> Note: This is resource heavy and time-intensive on your computer and won't work without the proper resolution/game settings.
+```
+python train_fixed.py
+```
+The script:
+- Creates ***VampireSurvivorsEnv("config_fixed.yaml")***.
+- Wraps it in Stable-Baselines3 utilities (*DummyVecEnv*, *VecTransposeImage*).
+- Trains a PPO agent while allowing basic hotkeys in the console (pause/quit via *ConsoleHotkeyCallback*).
+
+Trained models and logs are written to local directories (e.g. *models/*,*tb/*) which are **intentionally not committed** to this repository. (sorry... you gotta work for your personal Vampire Survivors auto-player)
