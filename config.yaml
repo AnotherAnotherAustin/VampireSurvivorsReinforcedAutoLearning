@@ -1,0 +1,42 @@
+capture_mode: monitor
+monitor_index: 1
+obs_width: 84
+obs_height: 84
+frame_stack: 4
+fps: 15
+action_repeat: 2
+keys:
+  up: w
+  down: s
+  left: a
+  right: d
+roi:
+  xp_bar:
+  - 360
+  - 24
+  - 1200
+  - 18
+  hp_bar:
+  - 885
+  - 600
+  - 150
+  - 14
+templates:
+  game_over: templates/game_over.png
+  player: templates/player.png
+  hud: templates/hud.png
+reset_wait:
+  max_seconds: 60
+  check_fps: 5
+  hud_threshold: 0.75
+vision:
+  player_match_threshold: 0.72
+  search_radius: 220
+enemy_penalty:
+  ring_inner: 70
+  ring_outer: 220
+  density_weight: 0.18
+idle_penalty:
+  speed_px_threshold: 2.0
+  weight: 0.02
+_xp_scale: 2.6
