@@ -5,6 +5,8 @@ plays **Vampire Survivors** by reading pixels from the game screen and sending
 keyboard inputs in real time. It uses Python, OpenCV, and Gymnasium-style
 environments to experiment with reward shaping and control logic.
 
+This is a repo that houses all the required files for a reinforcement learning agent that views a working game of Vampire Survivors and gradually improves its play style.
+
 The goal of this repo is to demonstrate how to:
 - Capture and preprocess game frames from the desktop.
 - Track key UI elements (player, HUD, health/XP bars) using template matching.
@@ -20,7 +22,7 @@ The goal of this repo is to demonstrate how to:
 ## Project Structure
 
 ```text
-vs_rl/
+.
 ├── capture_fixed.py        # Full-monitor capture + preprocessing
 ├── vs_env_fixed.py         # Gymnasium Env wrapping Vampire Survivors
 ├── train_fixed.py          # PPO training script with hotkey controls
