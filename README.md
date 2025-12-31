@@ -99,7 +99,7 @@ The main environment class is defined in **vs_env_fixed.py**:
 - Actions: movement directions via *KeyController* in **controls.py**.
 - Reward: combines time alive, HP changes, and enemy density around the player (see **reward.py** and the *reward:*/*enemy_penalty:* sections in the config).
 
-### Running it (what you've been waiting for)
+### Running the whole thing (Finally...)
 > Note: This is resource heavy and time-intensive on your computer and won't work without the proper resolution/game settings.
 ```
 python train_fixed.py
