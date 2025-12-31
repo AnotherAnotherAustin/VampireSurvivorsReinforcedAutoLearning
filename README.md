@@ -1,7 +1,7 @@
 # Vampire Survivors Reinforced Auto Learning
 
 This project implements a reinforcement learning–style automation system that
-plays **Vampire Survivors** by reading pixels from the game screen and sending
+plays the top-down game **Vampire Survivors** by reading pixels from the game screen and sending
 keyboard inputs in real time. It uses Python, OpenCV, and Gymnasium-style
 environments to experiment with reward shaping and control logic.
 
