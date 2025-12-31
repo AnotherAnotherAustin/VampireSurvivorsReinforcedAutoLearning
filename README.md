@@ -57,7 +57,7 @@ included in the repository to keep it lightweight and focused on the code for po
 1. Clone this repository:
   ```
 git clone https://github.com/AnotherAnotherAustin/VampireSurvivorsReinforcedAutoLearning.git
-cd VampireSurvivorsReinforcedAutoLearning/vs_rl
+cd VampireSurvivorsReinforcedAutoLearning/
 ```
 2. Create and activate a virtual environment (it was easier to get it to run this way):
 ```
